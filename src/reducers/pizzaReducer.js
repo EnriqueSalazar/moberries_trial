@@ -5,7 +5,7 @@ import * as types from '../actions/actionTypes';
 
 export default (state = {
     selectedIngredients: [],
-    response:{}
+    response:''
 }, action) => {
     switch (action.type) {
         case types.ADD_INGREDIENT:

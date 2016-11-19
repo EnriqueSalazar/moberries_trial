@@ -21,21 +21,31 @@ export const resetIngredients = () => {
         type: types.RESET_INGREDIENTS
     }
 };
+
+export const submitPizzaSuccess=(response)=>{
+    return {
+        type: types.SUBMIT_PIZZA,
+        response
+    }
+};
+
+//Had to install Chrome extension due to CORS issue with Postman's echo.
+//Allow-Control-Allow-Origin: * --> https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi?hl=en
 export const submitPizza = (pizza) => {
-    axios.post('echo.getpostman.com/post', pizza).then(
-        response => {
-            return {
-                type: types.SUBMIT_PIZZA,
-                response: response.data
+    return dispatch => {
+        return axios.post('http://echo.getpostman.com/post', pizza,{
+            "headers": {
+                "content-type": "text/plain",
             }
-        }
-    ).catch(error => {
-        debugger;
-        return {
-            type: types.SUBMIT_PIZZA,
-            response: error
-        }
-    })
+        }).then(
+            response => {
+                dispatch(
+                 submitPizzaSuccess(response.statusText))
+            }
+        ).catch(error => {
+            throw(error);
+        })
+    }
 };
 
 export const resetPizza = () => {

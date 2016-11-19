@@ -16,13 +16,13 @@ class PizzaContainer extends Component {
 
     componentDidMount() {
         this.props.actions.loadIngredients();
+        this.props.actions.submitPizza({pizza:"submit"});
     }
 
     componentWillReceiveProps(nextProps) {
     }
 
     render() {
-        debugger
         return (
             <div>
                 {this.props.ingredients.map(ingredient => {
