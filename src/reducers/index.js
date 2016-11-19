@@ -3,9 +3,11 @@
  */
 import { combineReducers } from 'redux';
 import ingredientReducer from './ingredientReducer'
+import clientReducer from './clientReducer'
 
 const rootReducer = combineReducers({
-    ingredientReducer
+    ingredientReducer,
+    clientReducer
 });
 
 export default rootReducer;

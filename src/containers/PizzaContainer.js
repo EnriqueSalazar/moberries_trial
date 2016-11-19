@@ -5,6 +5,7 @@ import React, { PropTypes, Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as ingredientActions from '../actions/ingredientActions';
+import * as clientActions from '../actions/clientActions';
 
 class PizzaContainer extends Component {
     constructor(props) {
@@ -20,6 +21,7 @@ class PizzaContainer extends Component {
     }
 
     render() {
+        debugger
         return (
             <div>
                 {this.props.ingredients.map(ingredient=>{
@@ -35,16 +37,18 @@ PizzaContainer.propTypes = {
 };
 
 function mapStateToProps(state) {
-    const {ingredientReducer} = state;
+    const {ingredientReducer, clientReducer} = state;
     const {ingredients} = ingredientReducer;
+    const {client} = clientReducer;
     return {
-        ingredients
+        ingredients,
+        client
     };
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        actions: bindActionCreators(ingredientActions, dispatch)
+        actions: bindActionCreators(Object.assign({}, ingredientActions, clientActions), dispatch)
     }
 }
 
