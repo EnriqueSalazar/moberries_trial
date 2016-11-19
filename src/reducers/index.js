@@ -4,10 +4,12 @@
 import { combineReducers } from 'redux';
 import ingredientReducer from './ingredientReducer'
 import clientReducer from './clientReducer'
+import pizzaReducer from './pizzaReducer'
 
 const rootReducer = combineReducers({
     ingredientReducer,
-    clientReducer
+    clientReducer,
+    pizzaReducer
 });
 
 export default rootReducer;
