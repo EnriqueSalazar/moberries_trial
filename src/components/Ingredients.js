@@ -2,7 +2,6 @@
  * Created by enriq on 20/11/16.
  */
 
-
 import React, { PropTypes } from 'react';
 import {
     Button,
@@ -22,8 +21,19 @@ let Ingredients = props => {
         ingredients,
         selectedIngredients,
         ingredientSelect,
-        ingredientAdd
+        ingredientAdd,
+        removeIngredient
     }= props;
+
+    let selectedIngredientOnScreen = selectedIngredients.map((selectedIngredient) => {
+        return (<Button
+            key={selectedIngredient.id}
+            type="button"
+            bsStyle="danger"
+            onClick={() => removeIngredient(selectedIngredient.id)}
+        >
+            {selectedIngredient.name + ' '}<Glyphicon glyph="remove"/> </Button>)
+    });
 
     return (
         <div>
@@ -43,17 +53,19 @@ let Ingredients = props => {
                 bsStyle="danger"
                 onClick={() => ingredientAdd()}
             >
-                <Glyphicon glyph="erase"/>
+                <Glyphicon glyph="plus"/>
             </Button>
-
+            {selectedIngredientOnScreen}
         </div>
     );
 };
 
 Ingredients.propTypes = {
-    initialValues: PropTypes.object.isRequired,
-    grupoSubmit: PropTypes.func.isRequired,
-    handleSubmit: PropTypes.func,
+    ingredients: PropTypes.array.isRequired,
+    selectedIngredients: PropTypes.array.isRequired,
+    ingredientSelect: PropTypes.func.isRequired,
+    ingredientAdd: PropTypes.func.isRequired,
+    removeIngredient: PropTypes.func.isRequired
 };
 
 export default Ingredients;

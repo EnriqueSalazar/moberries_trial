@@ -11,10 +11,18 @@ import RaisedButton from 'material-ui/RaisedButton';
 import { Grid, Row, Col, Button } from 'react-bootstrap';
 import './Pizza.css';
 import YourOrder from '../components/YourOrder'
+import DeliveryAddress from '../components/DeliveryAddress'
+import _ from 'lodash';
+
 class PizzaContainer extends Component {
     constructor(props) {
         super(props);
-
+        this.state = {
+            temporarySelectedIngredient: {},
+            pizzaSize: 0,
+            isCheeseRand: false,
+            values: {}
+        };
     }
 
     componentWillMount() {
@@ -28,9 +36,34 @@ class PizzaContainer extends Component {
     componentWillReceiveProps(nextProps) {
     }
 
-    ingredientAdd = (e) => {
-        let ingredientId = e.target.value;
-        this.props.addIngredient(ingredientId);
+    ingredientSelect = (e) => {
+        let name = e.target.options[e.target.selectedIndex].text;
+        let id = parseInt(e.target.value, 10);
+        let temporarySelectedIngredient = {id, name};
+        this.setState({temporarySelectedIngredient});
+    };
+
+    ingredientAdd = () => {
+        if (!_.isEmpty(this.state.temporarySelectedIngredient)) {
+            this.props.actions.addIngredient(this.state.temporarySelectedIngredient);
+            this.setState({temporarySelectedIngredient: {}});
+        }
+    };
+
+    setPizzaSize = (pizzaSize) => {
+        this.setState({pizzaSize});
+    }
+
+    toggleCheeseRand = (isCheeseRand) => {
+        this.setState({isCheeseRand});
+    }
+
+    onTextChange = (e) => {
+        let field = e.target.id;
+        let value = e.target.value;
+        let values = this.state.values;
+        values[field] = value;
+        this.setState({values});
     }
 
     render() {
@@ -57,10 +90,19 @@ class PizzaContainer extends Component {
                             selectedIngredients={this.props.selectedIngredients}
                             ingredientSelect={this.ingredientSelect}
                             ingredientAdd={this.ingredientAdd}
+                            pizzaSize={this.state.pizzaSize}
+                            setPizzaSize={this.setPizzaSize}
+                            isCheeseRand={this.state.isCheeseRand}
+                            toggleCheeseRand={this.toggleCheeseRand}
+                            removeIngredient={this.props.actions.removeIngredient}
                         />
-
+                        <DeliveryAddress
+                            values={this.state.values}
+                            onTextChange={this.onTextChange}
+                        />
                     </Col>
                 </Row>
+
             </Grid>
 
         );
