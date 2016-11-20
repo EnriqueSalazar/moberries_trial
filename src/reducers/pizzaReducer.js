@@ -12,14 +12,14 @@ export default (state = {
             return (
                 Object.assign(
                     {}, state, {
-                        selectedIngredients: [...state.selectedIngredients, action.ingredientId]
+                        selectedIngredients: [...state.selectedIngredients, action.ingredient]
                     }));
         case types.REMOVE_INGREDIENT:
             return (
                 Object.assign(
                     {}, state, {
-                        selectedIngredients: state.selectedIngredients.filter(ingredientId=>{
-                            return ingredientId !== action.ingredientId;
+                        selectedIngredients: state.selectedIngredients.filter(ingredient=>{
+                            return ingredient.id !== action.ingredientId;
                         })
                     }));
         case types.RESET_INGREDIENTS:

@@ -4,10 +4,10 @@
 import * as types from './actionTypes'
 import axios from 'axios';
 
-export const addIngredient = (ingredientId) => {
+export const addIngredient = (ingredient) => {
     return {
         type: types.ADD_INGREDIENT,
-        ingredientId
+        ingredient
     }
 };
 export const removeIngredient = (ingredientId) => {
