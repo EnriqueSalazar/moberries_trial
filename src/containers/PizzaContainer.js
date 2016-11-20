@@ -40,7 +40,6 @@ class PizzaContainer extends Component {
 
     componentDidMount() {
         this.props.actions.loadIngredients();
-        this.props.actions.submitPizza({pizza: "submit"});
     }
 
     componentWillReceiveProps(nextProps) {
@@ -116,6 +115,19 @@ class PizzaContainer extends Component {
     nextEverythingCorrect = () => {
         this.toggleEverythingCorrectModal();
         this.toggleThankYouModal();
+        let selectedIngredients= this.props.selectedIngredients;
+        let pizzaSize=this.state.pizzaSize;
+        let isCheeseRand=this.state.isCheeseRand;
+        let client=this.props.client;
+        let todaysPizza=this.state.todaysPizza;
+        let pizza={
+            selectedIngredients,
+            pizzaSize,
+            isCheeseRand,
+            client,
+            todaysPizza
+        };
+        this.props.actions.submitPizza({pizza});
 
     };
     backEverythingCorrect = () => {

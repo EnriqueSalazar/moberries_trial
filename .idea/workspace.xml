@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d5d93ef8-0016-4cca-ad54-68f3d7977bcf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/App.js" afterPath="$PROJECT_DIR$/src/App.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/actions/pizzaActions.js" afterPath="$PROJECT_DIR$/src/actions/pizzaActions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/apis/ingredientsService.js" afterPath="$PROJECT_DIR$/src/apis/ingredientsService.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/DeliveryAddress.js" afterPath="$PROJECT_DIR$/src/components/DeliveryAddress.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/EverythingCorrect.js" afterPath="$PROJECT_DIR$/src/components/EverythingCorrect.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Ingredients.js" afterPath="$PROJECT_DIR$/src/components/Ingredients.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/PizzaHome.js" afterPath="$PROJECT_DIR$/src/components/PizzaHome.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/PizzaSize.js" afterPath="$PROJECT_DIR$/src/components/PizzaSize.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ThankYou.js" afterPath="$PROJECT_DIR$/src/components/ThankYou.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/YourOrder.js" afterPath="$PROJECT_DIR$/src/components/YourOrder.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/containers/PizzaContainer.js" afterPath="$PROJECT_DIR$/src/containers/PizzaContainer.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -69,8 +60,8 @@
           <file leaf-file-name="PizzaContainer.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/containers/PizzaContainer.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="205" column="0" lean-forward="true" selection-start-line="205" selection-start-column="0" selection-end-line="205" selection-end-column="0" />
+                <state relative-caret-position="555">
+                  <caret line="128" column="10" lean-forward="true" selection-start-line="128" selection-start-column="10" selection-end-line="128" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -177,10 +168,7 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="120">
                   <caret line="10" column="44" lean-forward="false" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-                  <folding>
-                    <marker date="1479672771517" expanded="true" signature="901:1313" ph="{...}" />
-                    <marker date="1479672771517" expanded="true" signature="946:1306" ph="{...}" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -230,8 +218,8 @@
           <file leaf-file-name="pizzaActions.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/actions/pizzaActions.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="480">
-                  <caret line="47" column="25" lean-forward="true" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+                <state relative-caret-position="615">
+                  <caret line="43" column="58" lean-forward="true" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
                   <folding />
                 </state>
               </provider>
@@ -312,8 +300,8 @@
         <option value="$PROJECT_DIR$/src/components/DeliveryAddress.js" />
         <option value="$PROJECT_DIR$/src/apis/ingredientsService.js" />
         <option value="$PROJECT_DIR$/src/components/EverythingCorrect.js" />
-        <option value="$PROJECT_DIR$/src/containers/PizzaContainer.js" />
         <option value="$PROJECT_DIR$/src/components/ThankYou.js" />
+        <option value="$PROJECT_DIR$/src/containers/PizzaContainer.js" />
         <option value="$PROJECT_DIR$/src/actions/pizzaActions.js" />
       </list>
     </option>
@@ -610,12 +598,12 @@
       <option name="presentableId" value="Default" />
       <updated>1479509533611</updated>
       <workItem from="1479509535554" duration="40478000" />
-      <workItem from="1479616454455" duration="29820000" />
+      <workItem from="1479616454455" duration="30655000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70298000" />
+    <option name="totallyTimeSpent" value="71133000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1919" y="-7" width="1202" height="1928" extended-state="6" />
@@ -624,12 +612,12 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21034776" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32982844" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32927504" sideWeight="0.49363866" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32927504" sideWeight="0.49363866" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32927504" sideWeight="0.5063613" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16989486" sideWeight="0.51993215" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16989486" sideWeight="0.48346055" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16989486" sideWeight="0.48006785" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -706,10 +694,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="31" column="48" lean-forward="true" selection-start-line="31" selection-start-column="48" selection-end-line="31" selection-end-column="48" />
-          <folding>
-            <marker date="1479672771517" expanded="true" signature="901:1313" ph="{...}" />
-            <marker date="1479672771517" expanded="true" signature="946:1306" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -956,14 +941,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/clientReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/DeliveryAddress.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -998,17 +975,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/containers/PizzaContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="10" column="44" lean-forward="false" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-          <folding>
-            <marker date="1479672771517" expanded="true" signature="901:1313" ph="{...}" />
-            <marker date="1479672771517" expanded="true" signature="946:1306" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/EverythingCorrect.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -1025,10 +991,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/reducers/clientReducer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/PizzaContainer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="44" lean-forward="false" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/pizzaActions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="47" column="25" lean-forward="true" selection-start-line="47" selection-start-column="25" selection-end-line="47" selection-end-column="25" />
+        <state relative-caret-position="615">
+          <caret line="43" column="58" lean-forward="true" selection-start-line="43" selection-start-column="58" selection-end-line="43" selection-end-column="58" />
           <folding />
         </state>
       </provider>

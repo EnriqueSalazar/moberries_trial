@@ -39,14 +39,15 @@ export const submitPizza = (pizza) => {
             }
         }).then(
             response => {
+                console.info(response);
                 dispatch(
                  submitPizzaSuccess(response.statusText));
             }
         ).catch(error => {
             dispatch(
-                submitPizzaSuccess(error.stack));
-            throw(error);
-        })
+                submitPizzaSuccess(error.message));
+            // throw(error);
+        });
     }
 };
 
