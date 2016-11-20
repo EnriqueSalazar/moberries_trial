@@ -12,6 +12,10 @@ import { Grid, Row, Col, Button } from 'react-bootstrap';
 import './Pizza.css';
 import YourOrder from '../components/YourOrder'
 import DeliveryAddress from '../components/DeliveryAddress'
+import PizzaModal from '../components/PizzaModal'
+import PizzaHome from '../components/PizzaHome'
+import EverythingCorrect from '../components/EverythingCorrect'
+import ThankYou from '../components/ThankYou'
 import _ from 'lodash';
 
 class PizzaContainer extends Component {
@@ -21,7 +25,12 @@ class PizzaContainer extends Component {
             temporarySelectedIngredient: {},
             pizzaSize: 0,
             isCheeseRand: false,
-            values: {}
+            values: {},
+            isYourOrder: false,
+            isDeliveryAddress: false,
+            isEverythingCorrect: false,
+            isThankYou: false,
+            isPizzaHome: true
         };
     }
 
@@ -66,44 +75,129 @@ class PizzaContainer extends Component {
         this.setState({values});
     }
 
+    toggleDeliveryAddressModal = () => {
+        this.setState({isDeliveryAddress: !this.state.isDeliveryAddress});
+    };
+    toggleEverythingCorrectModal = () => {
+        this.setState({isEverythingCorrect: !this.state.isEverythingCorrect});
+    };
+    toggleThankYouModal = () => {
+        this.setState({isThankYou: !this.state.isThankYou});
+    };
+    toggleYourOrderModal = () => {
+        this.setState({isYourOrder: !this.state.isYourOrder});
+    };
+    togglePizzaHomeModal = () => {
+        this.setState({isPizzaHome: !this.state.isPizzaHome});
+    };
+    nextPizzaHome = () => {
+        this.togglePizzaHomeModal();
+        this.toggleYourOrderModal()
+    }
+    nextYourOrder = () => {
+        this.toggleYourOrderModal();
+        this.toggleDeliveryAddressModal();
+    }
+    backYourOrder = () => {
+        this.toggleYourOrderModal();
+        this.togglePizzaHomeModal();
+
+    }
+    nextDeliveryAddress = () => {
+        this.toggleDeliveryAddressModal();
+        this.toggleEverythingCorrectModal();
+    }
+    backDeliveryAddress = () => {
+        this.toggleDeliveryAddressModal();
+        this.toggleYourOrderModal();
+    }
+    nextEverythingCorrect = () => {
+        this.toggleEverythingCorrectModal();
+        this.toggleThankYouModal();
+
+    }
+    backEverythingCorrect = () => {
+        this.toggleEverythingCorrectModal();
+        this.toggleDeliveryAddressModal();
+    }
+    nextThankYou = () => {
+        this.toggleThankYouModal();
+        this.togglePizzaHomeModal();
+    }
+    backThankYou = () => {
+        this.toggleThankYouModal();
+        this.toggleEverythingCorrectModal()
+    }
+
     render() {
         return (
-            <Grid fluid>
-                <Row className='header'>
-                    <Col md={6}>
-                        <td className='header-logo'>
-                            <Button><h2 className='myText'>texto</h2></Button>
+            <div>
 
-                        </td>
-                    </Col>
-                    <Col md={6} className='header-menu-div'>
-                        <td className='header-menu-td'>
-                            hola
 
-                        </td>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col md={12} className='pizza-body'>
-                        <YourOrder
-                            ingredients={this.props.ingredients}
-                            selectedIngredients={this.props.selectedIngredients}
-                            ingredientSelect={this.ingredientSelect}
-                            ingredientAdd={this.ingredientAdd}
-                            pizzaSize={this.state.pizzaSize}
-                            setPizzaSize={this.setPizzaSize}
-                            isCheeseRand={this.state.isCheeseRand}
-                            toggleCheeseRand={this.toggleCheeseRand}
-                            removeIngredient={this.props.actions.removeIngredient}
-                        />
-                        <DeliveryAddress
-                            values={this.state.values}
-                            onTextChange={this.onTextChange}
-                        />
-                    </Col>
-                </Row>
+                <Grid fluid>
+                    <Row className='header'>
+                        <Col md={6}>
+                            <td className='header-logo'>
+                                <Button><h2 className='myText'>texto</h2></Button>
 
-            </Grid>
+                            </td>
+                        </Col>
+                        <Col md={6} className='header-menu-div'>
+                            <td className='header-menu-td'>
+                                hola
+
+                            </td>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md={12} className='pizza-body'>
+
+                            {!this.state.isPizzaHome ? null :
+                                <PizzaHome
+                                    nextPizzaHome={this.nextPizzaHome}
+                                />
+                            }
+                            <PizzaModal show={this.state.isYourOrder}>
+                                <YourOrder
+                                    ingredients={this.props.ingredients}
+                                    selectedIngredients={this.props.selectedIngredients}
+                                    ingredientSelect={this.ingredientSelect}
+                                    ingredientAdd={this.ingredientAdd}
+                                    pizzaSize={this.state.pizzaSize}
+                                    setPizzaSize={this.setPizzaSize}
+                                    isCheeseRand={this.state.isCheeseRand}
+                                    toggleCheeseRand={this.toggleCheeseRand}
+                                    removeIngredient={this.props.actions.removeIngredient}
+                                    nextYourOrder={this.nextYourOrder}
+                                    backYourOrder={this.backYourOrder}
+                                />
+                            </PizzaModal>
+                            <PizzaModal show={this.state.isDeliveryAddress}>
+                                <DeliveryAddress
+                                    values={this.state.values}
+                                    nextDeliveryAddress={this.nextDeliveryAddress}
+                                    nextPizzaHome={this.nextPizzaHome}
+                                    backDeliveryAddress={this.backDeliveryAddress}
+                                />
+                            </PizzaModal>
+                            <PizzaModal show={this.state.isEverythingCorrect}>
+                                <EverythingCorrect
+                                    nextEverythingCorrect={this.nextEverythingCorrect}
+                                    backEverythingCorrect={this.backEverythingCorrect}
+                                />
+                            </PizzaModal>
+                            <PizzaModal show={this.state.isThankYou}>
+                                <ThankYou
+                                    nextThankYou={this.nextThankYou}
+                                    backThankYou={this.backThankYou}
+                                />
+                            </PizzaModal>
+                        </Col>
+                    </Row>
+
+                </Grid>
+
+            </div>
 
         );
     }

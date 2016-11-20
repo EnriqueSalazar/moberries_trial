@@ -18,6 +18,7 @@ import {
     FormControl
 } from 'react-bootstrap';
 import _ from 'lodash';
+import './PizzaSize.css';
 
 let PizzaSize = props => {
     const {
@@ -44,6 +45,8 @@ let PizzaSize = props => {
             <RenderButton sizeOption={20}/>
             <RenderButton sizeOption={30}/>
             <RenderButton sizeOption={40}/>
+            <div className="numberCircle">30</div>
+
         </div>
     );
 };

@@ -36,7 +36,7 @@ let Ingredients = props => {
     });
 
     return (
-        <div>
+        <div >
             <FormGroup controlId="formControlsSelectMultiple">
                 <ControlLabel>Ingredients:</ControlLabel>
                 <FormControl componentClass="select" placeholder="select" onChange={ingredientSelect}>

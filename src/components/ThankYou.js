@@ -1,5 +1,5 @@
 /**
- * Created by enriq on 20/11/16.
+ * Created by enriq on 21/11/16.
  */
 
 import React, { PropTypes } from 'react';
@@ -7,7 +7,7 @@ import {
     Modal,
 } from 'react-bootstrap';
 
-let EverythingCorrect = props => {
+let ThankYou = props => {
     const {}= props;
     return (
         <div>
@@ -16,6 +16,6 @@ let EverythingCorrect = props => {
     )
 }
 
-EverythingCorrect.propTypes = {};
+ThankYou.propTypes = {};
 
-export default EverythingCorrect;
+export default ThankYou;
