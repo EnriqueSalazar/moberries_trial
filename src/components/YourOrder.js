@@ -5,14 +5,8 @@
 import React, { PropTypes } from 'react';
 import {
     Button,
-    Glyphicon,
-    Row, Col,
-    FormGroup,
-    Grid,
-    Modal,
-    ButtonGroup
+    Glyphicon
 } from 'react-bootstrap';
-import _ from 'lodash';
 import Ingredients from './Ingredients';
 import PizzaSize from './PizzaSize';
 
@@ -26,7 +20,9 @@ let YourOrder = props => {
         pizzaSize,
         isCheeseRand,
         toggleCheeseRand,
-        removeIngredient
+        removeIngredient,
+        nextYourOrder,
+        backYourOrder
     }= props;
 
 let CheeseRandSwitch = props =>{
@@ -53,6 +49,20 @@ let CheeseRandSwitch = props =>{
                 removeIngredient={removeIngredient}
             />
             <CheeseRandSwitch/>
+            <Button
+                type="button"
+                onClick={() => backYourOrder()}
+                bsStyle="danger"
+            >
+                <Glyphicon glyph="plus"/>{" Back"}
+            </Button>
+     <Button
+                type="button"
+                onClick={() => nextYourOrder()}
+                bsStyle="danger"
+            >
+                <Glyphicon glyph="plus"/>{" Next"}
+            </Button>
         </div>
     );
 };
@@ -66,7 +76,9 @@ YourOrder.propTypes = {
     ingredientAdd: PropTypes.func.isRequired,
     isCheeseRand: PropTypes.bool.isRequired,
     toggleCheeseRand: PropTypes.func.isRequired,
-    removeIngredient:PropTypes.func.isRequired
+    removeIngredient:PropTypes.func.isRequired,
+    nextYourOrder:PropTypes.func.isRequired,
+    backYourOrder:PropTypes.func.isRequired,
 };
 
 export default YourOrder;

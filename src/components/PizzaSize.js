@@ -8,16 +8,8 @@
 import React, { PropTypes } from 'react';
 import {
     Button,
-    Glyphicon,
-    Row, Col,
-    FormGroup,
-    Grid,
-    Modal,
-    ButtonGroup,
-    ControlLabel,
-    FormControl
+
 } from 'react-bootstrap';
-import _ from 'lodash';
 import './PizzaSize.css';
 
 let PizzaSize = props => {

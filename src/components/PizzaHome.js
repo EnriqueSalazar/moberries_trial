@@ -3,7 +3,6 @@
  */
 import React, { PropTypes } from 'react';
 import {
-    Modal,
     Button,
     Glyphicon
 } from 'react-bootstrap';
@@ -14,18 +13,26 @@ let PizzaHome = props => {
     }= props;
     return (
         <div>
-            <Button
-                type="button"
-                onClick={()=> nextPizzaHome()}
-                bsStyle="danger"
-            >
-                <Glyphicon glyph="plus"/>{" Order Today's Meal"}
-            </Button>        </div>
+            <center>
+                Chosen food every 5 days.<br />
+                Today on the table: Original Steinofen-Pizza <br /><br/>
+                <Button
+                    type="button"
+                    onClick={() => nextPizzaHome()}
+                    bsStyle="danger"
+                >
+                    <Glyphicon glyph="plus"/>{" Order Today's Meal"}
+                </Button>
+                <br/>
+                Check out or meal for tomorrow.<br/>
+                Made with love.<br/>
+            </center>
+        </div>
     )
 }
 
 PizzaHome.propTypes = {
-    startYourOrder:PropTypes.func.isRequired
+    nextPizzaHome: PropTypes.func.isRequired
 };
 
 export default PizzaHome;

@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux';
 import * as ingredientActions from '../actions/ingredientActions';
 import * as clientActions from '../actions/clientActions';
 import * as pizzaActions from '../actions/pizzaActions';
-import RaisedButton from 'material-ui/RaisedButton';
+// import RaisedButton from 'material-ui/RaisedButton';
 import { Grid, Row, Col, Button } from 'react-bootstrap';
 import './Pizza.css';
 import YourOrder from '../components/YourOrder'
@@ -25,12 +25,13 @@ class PizzaContainer extends Component {
             temporarySelectedIngredient: {},
             pizzaSize: 0,
             isCheeseRand: false,
-            values: {},
-            isYourOrder: false,
+            clientValues: {},
+            isYourOrder: true,
             isDeliveryAddress: false,
             isEverythingCorrect: false,
             isThankYou: false,
-            isPizzaHome: true
+            isPizzaHome: false,
+            todaysPizza: 'Steinofen-Pizza'
         };
     }
 
@@ -39,7 +40,7 @@ class PizzaContainer extends Component {
 
     componentDidMount() {
         this.props.actions.loadIngredients();
-        // this.props.actions.submitPizza({pizza: "submit"});
+        this.props.actions.submitPizza({pizza: "submit"});
     }
 
     componentWillReceiveProps(nextProps) {
@@ -61,19 +62,19 @@ class PizzaContainer extends Component {
 
     setPizzaSize = (pizzaSize) => {
         this.setState({pizzaSize});
-    }
+    };
 
     toggleCheeseRand = (isCheeseRand) => {
         this.setState({isCheeseRand});
-    }
+    };
 
     onTextChange = (e) => {
         let field = e.target.id;
         let value = e.target.value;
-        let values = this.state.values;
-        values[field] = value;
-        this.setState({values});
-    }
+        let clientValues = this.state.clientValues;
+        clientValues[field] = value;
+        this.setState({clientValues});
+    };
 
     toggleDeliveryAddressModal = () => {
         this.setState({isDeliveryAddress: !this.state.isDeliveryAddress});
@@ -93,41 +94,42 @@ class PizzaContainer extends Component {
     nextPizzaHome = () => {
         this.togglePizzaHomeModal();
         this.toggleYourOrderModal()
-    }
+    };
     nextYourOrder = () => {
         this.toggleYourOrderModal();
         this.toggleDeliveryAddressModal();
-    }
+    };
     backYourOrder = () => {
         this.toggleYourOrderModal();
         this.togglePizzaHomeModal();
 
-    }
+    };
     nextDeliveryAddress = () => {
+        this.props.actions.addClient(this.state.clientValues);
         this.toggleDeliveryAddressModal();
         this.toggleEverythingCorrectModal();
-    }
+    };
     backDeliveryAddress = () => {
         this.toggleDeliveryAddressModal();
         this.toggleYourOrderModal();
-    }
+    };
     nextEverythingCorrect = () => {
         this.toggleEverythingCorrectModal();
         this.toggleThankYouModal();
 
-    }
+    };
     backEverythingCorrect = () => {
         this.toggleEverythingCorrectModal();
         this.toggleDeliveryAddressModal();
-    }
+    };
     nextThankYou = () => {
         this.toggleThankYouModal();
         this.togglePizzaHomeModal();
-    }
+    };
     backThankYou = () => {
         this.toggleThankYouModal();
         this.toggleEverythingCorrectModal()
-    }
+    };
 
     render() {
         return (
@@ -137,20 +139,32 @@ class PizzaContainer extends Component {
                 <Grid fluid>
                     <Row className='header'>
                         <Col md={6}>
-                            <td className='header-logo'>
-                                <Button><h2 className='myText'>texto</h2></Button>
+                            <table className='header-logo'>
+                                <tbody>
+                                <tr>
+                                    <td>
 
-                            </td>
+                                        <Button><h2 className='myText'>texto</h2></Button>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </Col>
                         <Col md={6} className='header-menu-div'>
-                            <td className='header-menu-td'>
-                                hola
-
-                            </td>
+                            <table className='header-menu-td'>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        hola
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col md={12} className='pizza-body'>
+                    <Row className='pizza-body'>
+                        <Col md={2}/>
+                        <Col md={8}>
 
                             {!this.state.isPizzaHome ? null :
                                 <PizzaHome
@@ -174,9 +188,9 @@ class PizzaContainer extends Component {
                             </PizzaModal>
                             <PizzaModal show={this.state.isDeliveryAddress}>
                                 <DeliveryAddress
-                                    values={this.state.values}
+                                    clientValues={this.state.clientValues}
+                                    onTextChange={this.onTextChange}
                                     nextDeliveryAddress={this.nextDeliveryAddress}
-                                    nextPizzaHome={this.nextPizzaHome}
                                     backDeliveryAddress={this.backDeliveryAddress}
                                 />
                             </PizzaModal>
@@ -184,12 +198,21 @@ class PizzaContainer extends Component {
                                 <EverythingCorrect
                                     nextEverythingCorrect={this.nextEverythingCorrect}
                                     backEverythingCorrect={this.backEverythingCorrect}
+                                    isCheeseRand={this.state.isCheeseRand}
+                                    pizzaSize={this.state.pizzaSize}
+                                    todaysPizza={this.state.todaysPizza}
+                                    client={this.props.client}
+                                    selectedIngredients={this.props.selectedIngredients}
+
                                 />
                             </PizzaModal>
                             <PizzaModal show={this.state.isThankYou}>
                                 <ThankYou
                                     nextThankYou={this.nextThankYou}
                                     backThankYou={this.backThankYou}
+                                    client={this.props.client}
+                                    response={this.props.response}
+
                                 />
                             </PizzaModal>
                         </Col>

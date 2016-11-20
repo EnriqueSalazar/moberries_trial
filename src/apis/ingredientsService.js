@@ -13,7 +13,7 @@ const fetchData = () => {
             {id: 7, name: 'Onions'},
             {id: 8, name: 'Olives'},
             {id: 9, name: 'Red peppers'},
-            {id: 10, name: 'scallions'},
+            {id: 10, name: 'Scallions'},
             {id: 11, name: 'Spinach'},
             {id: 12, name: 'Sun dried tomatoes'},
             {id: 13, name: 'Sweet corn'},

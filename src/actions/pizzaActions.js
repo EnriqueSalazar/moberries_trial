@@ -40,9 +40,11 @@ export const submitPizza = (pizza) => {
         }).then(
             response => {
                 dispatch(
-                 submitPizzaSuccess(response.statusText))
+                 submitPizzaSuccess(response.statusText));
             }
         ).catch(error => {
+            dispatch(
+                submitPizzaSuccess(error.stack));
             throw(error);
         })
     }

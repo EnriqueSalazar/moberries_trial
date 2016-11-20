@@ -6,20 +6,18 @@ import React, { PropTypes } from 'react';
 import {
     Button,
     Glyphicon,
-    Row, Col,
     FormGroup,
-    Grid,
-    Modal,
-    ButtonGroup,
+
     ControlLabel,
     FormControl
 } from 'react-bootstrap';
-import _ from 'lodash';
 
 let DeliveryAddress = props => {
     const {
-        values,
-        onTextChange
+        clientValues,
+        onTextChange,
+        nextDeliveryAddress,
+        backDeliveryAddress
     }= props;
 
     return (
@@ -31,7 +29,7 @@ let DeliveryAddress = props => {
                     <ControlLabel>FIRST NAME</ControlLabel>
                     <FormControl
                         type="text"
-                        value={values.firstName}
+                        value={clientValues.firstName}
                         placeholder="First Name"
                         onChange={onTextChange}
                     />
@@ -42,7 +40,7 @@ let DeliveryAddress = props => {
                     <ControlLabel>SURNAME</ControlLabel>
                     <FormControl
                         type="text"
-                        value={values.surname}
+                        value={clientValues.surname}
                         placeholder="Surname"
                         onChange={onTextChange}
                     />
@@ -53,7 +51,7 @@ let DeliveryAddress = props => {
                     <ControlLabel>{'STREET/NO'}</ControlLabel>
                     <FormControl
                         type="text"
-                        value={values.street}
+                        value={clientValues.street}
                         placeholder="Street"
                         onChange={onTextChange}
                     />
@@ -64,7 +62,7 @@ let DeliveryAddress = props => {
                     <ControlLabel>{' '}</ControlLabel>
                     <FormControl
                         type="text"
-                        value={values.no}
+                        value={clientValues.no}
                         placeholder="No."
                         onChange={onTextChange}
                     />
@@ -75,7 +73,7 @@ let DeliveryAddress = props => {
                     <ControlLabel>{'POSTCODE/CITY'}</ControlLabel>
                     <FormControl
                         type="text"
-                        value={values.postcode}
+                        value={clientValues.postcode}
                         placeholder="Postcode"
                         onChange={onTextChange}
                     />
@@ -86,20 +84,35 @@ let DeliveryAddress = props => {
                     <ControlLabel>{' '}</ControlLabel>
                     <FormControl
                         type="text"
-                        value={values.city}
+                        value={clientValues.city}
                         placeholder="City"
                         onChange={onTextChange}
                     />
                 </FormGroup>
-
             </form>
+            <Button
+                type="button"
+                onClick={() => backDeliveryAddress()}
+                bsStyle="danger"
+            >
+                <Glyphicon glyph="plus"/>{" Back"}
+            </Button>
+            <Button
+                type="button"
+                onClick={() => nextDeliveryAddress()}
+                bsStyle="danger"
+            >
+                <Glyphicon glyph="plus"/>{" Next"}
+            </Button>
         </div>
     );
 };
 
 DeliveryAddress.propTypes = {
-    values: PropTypes.object.isRequired,
-    onTextChange: PropTypes.func.isRequired
+    clientValues: PropTypes.object.isRequired,
+    onTextChange: PropTypes.func.isRequired,
+    backDeliveryAddress: PropTypes.func.isRequired,
+    nextDeliveryAddress: PropTypes.func.isRequired
 };
 
 export default DeliveryAddress;
